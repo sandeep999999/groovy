@@ -6,6 +6,7 @@ import com.imobile3.groovypayments.data.entities.CartTaxEntity;
 import com.imobile3.groovypayments.data.entities.ProductEntity;
 import com.imobile3.groovypayments.data.entities.ProductTaxJunctionEntity;
 import com.imobile3.groovypayments.data.entities.TaxEntity;
+import com.imobile3.groovypayments.data.entities.UserEntity;
 import com.imobile3.groovypayments.data.enums.GroovyColor;
 import com.imobile3.groovypayments.data.enums.GroovyIcon;
 import com.imobile3.groovypayments.data.utils.CartBuilder;
@@ -446,6 +447,37 @@ public class TestDataRepository {
                 result = new ProductTaxJunctionEntity();
                 result.setProductId(product.getId());
                 result.setTaxId(tax.getId());
+                results.add(result);
+            }
+        }
+
+        return results;
+    }
+
+    @NonNull
+    public List<UserEntity> getAuthorisedUsers(@NonNull Environment environment) {
+        List<UserEntity> results = new ArrayList<>();
+
+        if (Environment.InstrumentationTest == environment) {
+            UserEntity result = new UserEntity();
+            result.setId(1L);
+            result.setEmail("sample1@email.com");
+            result.setFirstName("Sample First 1");
+            result.setLastName("Sample Last 1");
+            result.setUsername("Sample1");
+            result.setPassword("password1");
+            results.add(result);
+        }
+        // Generate Point-of-Sale Demo taxes.
+        else if (Environment.GroovyDemo == environment) {
+            for (long i = 5; i < 10; i++) {
+                UserEntity result = new UserEntity();
+                result.setId(i);
+                result.setEmail(String.format("sample%d@email.com", i));
+                result.setFirstName(String.format("Sample First %d", i));
+                result.setLastName(String.format("Sample Last %d", i));
+                result.setUsername(String.format("Sample%d", i));
+                result.setPassword(String.format("password%d", i));
                 results.add(result);
             }
         }
