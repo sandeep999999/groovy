@@ -46,7 +46,6 @@ git status
 # Push your new commit to your remote Git repository for funsies.
 git push
 ```  
-
 * More repository management discussions:  
   * Forking: https://help.github.com/en/github/getting-started-with-github/fork-a-repo
   * Duplicating: https://stackoverflow.com/questions/18200248/cloning-a-repo-from-someone-elses-github-and-pushing-it-to-a-repo-on-my-github
@@ -62,8 +61,6 @@ git push
 * The Stripe SDK architecture is built around the expectation of using a Client-Server model, where the Client (Mobile App) uses a **Publishable** API key, and the Server uses a **Secret** API key to generate a **Client Secret** string. We don't have a Server for this test application, so we emulate the "Server" within our app. The Android and iOS applications both use asynchronous utilities for generating a **Client Secret** using the Stripe **Secret** API key.  
 
 ### [[ Android Project Setup & Code Style ]](Android/README.md)
-
-### [[ iOS Project Setup & Code Style ]](iOS/README.md)
 
 # Expectations
 * Okay, **phew**. If you made it this far, you're in good shape :+1: hopefully that stuff didn't take too much time (it gets easier with practice).  
