@@ -1,4 +1,4 @@
-# GroovyPaymentApp-Senior
+# GroovyPaymentApp
 This App is intended for Senior candidates. There are Android and iOS variants of this mobile payment App in the respective project directories. This application may include intentional compiler errors out-of-the box, and many of the functions and screens described below are currently not implemented.
 
 | Login Screen | Order Entry |
